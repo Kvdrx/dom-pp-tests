@@ -112,6 +112,15 @@ class Value {
         }
     }
 
+    getStaticExplanation() {
+
+            let tree = Explainer.explain(this);
+            let list = Verdict.getWitness(tree);
+            let s = DesignatedObject.getDesignator(list);
+
+            return DesignatedObject.toString(s);
+    }
+
     /**
      * Converts an arbitrary object into a {@link Value}.
      * @param o The object to convert. If o is a {@link Value}, it is returned as
@@ -124,6 +133,8 @@ class Value {
         }
         return new ConstantValue(o);
     }
+
+
 }
 
 /**

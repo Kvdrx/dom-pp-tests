@@ -122,7 +122,7 @@ describe("Checking for bugs on Koalati website index page", () => {
 			)
 			let cond = new dompp.TestCondition(" text container Zindex >= testimonial-source Zindex", f);
 			let result = cond.evaluate(body);
-            let r = cond.evaluate(body).getValue();
+            let r = cond.evaluate(body);
             window.scroll(0,0);
 
 			return r;
@@ -132,11 +132,10 @@ describe("Checking for bugs on Koalati website index page", () => {
             let tree = Explainer.explain(result);
             let list = Verdict.getWitness(tree);
             let s = DesignatedObject.getDesignator(list);
-            let message = DesignatedObject.toString(s);
+            let message = DesignatedObject.toString(s)
 
-
- // Generate an AssertionError to compare the error message later:
-let  mess  = new assert.AssertionError({
+            // Generate an AssertionError to compare the error message later:
+/* let  mess  = new assert.AssertionError({
     actual: true,
     expected: false,
     operator: 'Equal'
@@ -150,20 +149,20 @@ let  mess  = new assert.AssertionError({
     assert.Equal(err.mess, message);
     assert.Equal(err.name, 'AssertionError');
     assert.Equal(err.actual, true);
-    assert.Equal(err.expected, false);
+    assert.Equal(err.expected, false); 
     assert.Equal(err.code, 'ERR_ASSERTION');
     assert.Equal(err.operator, 'Equal');
     assert.Equal(err.generatedMessage, true);
-  }
+  }*/
 
-            //if(expect(resultfinal).to.equal(false)){
-            /*throw new assert.AssertionError({
+            
+            throw new assert.AssertionError({
             name: "Assertion error", 
             message: message, 
             operator: 'Equal', 
             actual: true, 
             expected: false,
-            generatedMessage: true,*/
+            generatedMessage: true,
 
 })
 //}
