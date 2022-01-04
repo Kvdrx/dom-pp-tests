@@ -5,7 +5,7 @@
   "main": "index.mjs",
   "type": "module",
   "scripts": {
-    "test": "mocha --timeout 5000",
+    "test": "mocha --timeout 15000",
     "coverage": "NODE_ENV=test c8 mocha test/*.test.js",
     "doc": "jsdoc -c jsdoc.conf.json",
     "lint": "eslint --format html index.mjs modules/*.mjs > eslint.html",
@@ -50,7 +50,7 @@
     "chai-colors": "^1.0.1",
     "chai-dom": "^1.10.0",
     "data-tree": "^1.2.4",
-    "jest": "^26.6.3",
+    "jest": "^27.3.1",
     "mocha": "^8.4.0"
   },
   "directories": {
